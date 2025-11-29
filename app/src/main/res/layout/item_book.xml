@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
     android:padding="16dp"
     android:background="@android:color/white">
 
-
+    <!-- 預約資訊區域 -->
     <LinearLayout
+        android:id="@+id/book_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_edit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- 預約名稱 -->
         <TextView
             android:id="@+id/book_name"
             android:layout_width="wrap_content"
@@ -24,18 +29,23 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
+        <!-- 預約文字 -->
         <TextView
             android:id="@+id/book_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:text="text"
             android:textColor="@android:color/holo_green_dark"
             android:textSize="16sp" />
+
+        <!-- 人數 -->
         <TextView
             android:id="@+id/book_person"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:text="6"
             android:textColor="@color/blue"
@@ -43,23 +53,17 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
+    <!-- 編輯按鈕 -->
+    <android.widget.Button
+        android:id="@+id/btn_edit"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@color/red"
+        android:text="Edit"
+        android:textColor="@color/green"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <android.widget.Button
-            android:id="@+id/btn_edit"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:text="Edit"
-            android:textColor="@color/green"
-            android:textSize="15sp"
-            android:background="@color/red" />
-
-
-
-    </LinearLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,32 +8,34 @@
     android:background="@drawable/staff"
     tools:context=".Staffchoose">
 
-
-    <android.widget.Button
-        android:id="@+id/buttonWorkenote"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/green"
-        android:textColor="@color/black"
-        android:text="Workenote"
+        android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        app:layout_constraintVertical_bias="0.445">
 
-    <android.widget.Button
-        android:id="@+id/buttonManagement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/green"
-        android:textColor="@color/black"
-        android:text="Management"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.813"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        <android.widget.Button
+            android:id="@+id/buttonWorkenote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:text="Workenote"
+            android:textColor="@color/black"
+            android:layout_marginEnd="32dp" />
+
+        <android.widget.Button
+            android:id="@+id/buttonManagement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/green"
+            android:text="Management"
+            android:textColor="@color/black" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
