@@ -45,6 +45,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         TextView bookText;
         TextView bookPerson;
         Button btnedit;
+        Button btndel;
 
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,6 +53,7 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
             bookText = itemView.findViewById(R.id.book_text);
             bookPerson = itemView.findViewById(R.id.book_person);
             btnedit = itemView.findViewById(R.id.btn_edit);
+            btndel = itemView.findViewById(R.id.btn_del);
         }
     }
 }
