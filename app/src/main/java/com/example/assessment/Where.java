@@ -1,0 +1,49 @@
+package com.example.assessment;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class Where extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_where);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        Spinner shop = findViewById(R.id.spinnershop);
+        String[] items = {"Aberdeen", "Central", "Mongkok", "Tuen Mun", "Kwun Tong"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
+        shop.setAdapter(adapter);
+
+        Spinner area = findViewById(R.id.spinnerarea);
+        String[] item = {"A", "B", "C",};
+        ArrayAdapter<String> abc = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, item);
+        area.setAdapter(abc);
+
+        Button submit=(Button) findViewById(R.id.buttonSubmit);
+        submit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Where.this, Menu.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+}
